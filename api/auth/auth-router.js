@@ -24,8 +24,9 @@ router.post('/login', validateEmpty, validateLogin, (req, res, next) => {
     if (bcrypt.compareSync(password, req.user.password)) {
         const token = tokenBuilder(req.user);
         res.json({
-            message: `welcome, ${req.user.username}`,
+            message: `Welcome back ${req.user.username}`,
             token,
+            user_id:req.user.user_id,
         });
     } else {
         next({

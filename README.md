@@ -47,6 +47,34 @@ _What you receive:_
   "message": "You have successfully created an account with username iamauser"
 }
 ```
+
+### [POST] /api/auth/login
+
+- Login
+  - _username and password required_
+  - _returns the following:_
+    - _message: { "Welcome back iamauser" }_
+    - _token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlhbWF1c2VyIiwiaWF0IjoxNjM2ODYyMDY5LCJleHAiOjE2MzY5NDg0Njl9.fhVnkCzPDA5kubS1fo3mj57AEZcon267qH7dQ5Rk7rU"_
+    - _user_id: 1_
+
+_What you send:_
+
+```json
+{
+  "username": "iamauser",
+  "password": "randompassword"
+}
+```
+
+_What you receive:_
+
+```json
+{
+  "message": "Welcome back iamauser",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlhbWF1c2VyIiwiaWF0IjoxNjM2ODYyMDY5LCJleHAiOjE2MzY5NDg0Njl9.fhVnkCzPDA5kubS1fo3mj57AEZcon267qH7dQ5Rk7rU",
+  "user_id": 1
+}
+```
 # Build Week Scaffolding for Node and PostgreSQL
 
 ## Video Tutorial
