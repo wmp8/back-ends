@@ -1,5 +1,10 @@
 const db = require('../data/db-config.js');
 
+function getAllUsers() {
+    return db('users as u')
+        .select('u.user_id', 'u.username', 'u.phone');
+}
+
 function findBy(filter) {
     return db('users as u')
         .select('u.user_id', 'u.username', 'u.password', 'u.phone')
@@ -21,16 +26,5 @@ module.exports = {
     add,
     findBy,
     findById,
+    getAllUsers,
 };
-
-
-// const db = require('../data/db-config')
-
-// function getAllUsers() { return db('users') }
-
-
-
-// module.exports = {
-//     getAllUsers,
-//     insertUser,
-// }
