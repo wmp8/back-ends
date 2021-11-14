@@ -1,3 +1,52 @@
+# <p align="center">ft-water-my-plants-8 api - November, 2021</p>
+
+## <p align="center">https://wampl.herokuapp.com/</p>
+
+## <p align="center">REGISTER / LOGIN</p>
+
+### <p align="center">User examples:</p>
+
+```json
+[
+  {
+    "username": "iamauser",
+    "password": "randompassword"
+  },
+  {
+    "username": "pambeesly",
+    "password": "anotherrandompassword"
+  },
+  {
+    "username": "dwightschrute",
+    "password": "somethingrandom"
+  }
+]
+```
+
+### [POST] /api/auth/register
+
+- Register a new user
+  - _username required (must be a string | unique)_
+  - _password required (must be a string)_
+  - _phone required (must be a number)_
+
+_What you send:_
+
+```json
+{
+  "username": "iamauser",
+  "password": "randompassword",
+  "phone": 7131234567
+}
+```
+
+_What you receive:_
+
+```json
+{
+  "message": "You have successfully created an account with username iamauser"
+}
+```
 # Build Week Scaffolding for Node and PostgreSQL
 
 ## Video Tutorial
