@@ -9,8 +9,10 @@ exports.up = async (knex) => {
     .createTable('plants', (plants) => {
       plants.increments('plant_id');
       plants.string('nickname', 200).notNullable();
-      plants.string('species', 200).notNullable();
+      plants.string('species', 200);
       plants.string('image_url', 200);
+      plants.string('water_frequency', 200).notNullable();
+      plants.string('light_requirement', 200);
       plants.integer('user_id', 200).notNullable()
       .references('user_id')
       .inTable('users')
@@ -31,8 +33,6 @@ exports.up = async (knex) => {
       .inTable('users')
       .onUpdate('CASCADE')
       .onDelete('CASCADE');
-      sch.string('water_frquency', 200).notNullable();
-      
     })
 }
 
