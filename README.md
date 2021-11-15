@@ -140,6 +140,113 @@ _What you receive:_
   "message": "Your submission has been updated"
 }
 ```
+## <p align="center">PLANTS</p>
+
+### [GET] /api/plants
+
+**_RESTRICTED ENDPOINT_**
+
+- Get an array of plants for authenticated user
+  - _requires valid token in authorization header to access_
+
+_What you receive:_
+
+```json
+[
+    {
+        "image_url": "marble-pothos.png",
+        "light_requirement": "Thrives in medium to low indirect light. Not suited for intense, direct sun.",
+        "nickname": "Marble Queen Pothos",
+        "plant_id": 1,
+        "species": "",
+        "user_id": 1,
+        "water_frequency": "Water every 1-2 weeks"
+    },
+    {
+        "image_url": "snake-plant2.png",
+        "light_requirement": "Thrives in medium to bright indirect light, but can tolerate low indirect light.",
+        "nickname": "Snake Plant Laurentii",
+        "plant_id": 2,
+        "species": "",
+        "user_id": 1,
+        "water_frequency": "Water every 2-3 weeks"
+    },
+    {
+        "image_url": "zz.png",
+        "light_requirement": "Thrives in medium to low indirect light. Can tolerate bright indirect light. Not suited for intense, direct sun.",
+        "nickname": "ZZ Plant",
+        "plant_id": 3,
+        "species": "",
+        "user_id": 2,
+        "water_frequency": "Water every 3-4 weeks"
+    },
+    {
+        "image_url": "ech.png",
+        "light_requirement": "Thrives in bright direct light, but can tolerate bright indirect light.",
+        "nickname": "Echeveria",
+        "plant_id": 4,
+        "species": "",
+        "user_id": 3,
+        "water_frequency": "Water every 3-4 weeks"
+    }
+]
+```
+### [GET] /api/plants/:plant_id
+
+**_RESTRICTED ENDPOINT_**
+
+- Get information for a specific plant
+  - _requires valid token in authorization header to access_
+
+_What you receive:_
+
+```json
+{
+        "image_url": "marble-pothos.png",
+        "light_requirement": "Thrives in medium to low indirect light. Not suited for intense, direct sun.",
+        "nickname": "Marble Queen Pothos",
+        "plant_id": 1,
+        "species": "",
+        "user_id": 1,
+        "water_frequency": "Water every 1-2 weeks"
+    }
+```
+### [POST] /api/plants/create
+
+**_RESTRICTED ENDPOINT_**
+
+- Update authenticated user's phone number or password
+  - _requires valid token in authorization header to access_
+  - _nickname required (must be a string)_
+  - _water_frequency required (must be a string)_
+  
+_What you send:_
+
+```json
+{
+        "image_url": "marble-pothos.png",
+        "light_requirement": "Thrives in medium to low indirect light. Not suited for intense, direct sun.",
+        "nickname": "Marble Queen Pothos",
+        "species": "",
+        "water_frequency": "Water every 1-2 weeks"
+}
+```
+_What you receive:_
+
+```json
+
+  {
+        "image_url": "marble-pothos.png",
+        "light_requirement": "Thrives in medium to low indirect light. Not suited for intense, direct sun.",
+        "nickname": "Marble Queen Pothos",
+        "plant_id": 1,
+        "species": "",
+        "user_id": 1,
+        "water_frequency": "Water every 1-2 weeks"
+    }
+```
+
+
 
 # Build Week Scaffolding for Node and PostgreSQL
 
