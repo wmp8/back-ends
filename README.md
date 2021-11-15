@@ -75,6 +75,72 @@ _What you receive:_
   "user_id": 1
 }
 ```
+
+## <p align="center">USERS</p>
+
+### [GET] /api/users
+
+**_RESTRICTED ENDPOINT_**
+
+- Get an array of users for authenticated user
+  - _requires valid token in authorization header to access_
+
+_What you receive:_
+
+```json
+[
+  {
+    "phone": "7131234567",
+    "user_id": 1,
+    "username": "iamauser"
+  },
+  {
+    "phone": "8321234567",
+    "user_id": 2,
+    "username": "iamausertoo"
+  }
+]
+```
+
+### [GET] /api/users/:user_id
+
+**_RESTRICTED ENDPOINT_**
+
+- Get information for a specific user
+  - _requires valid token in authorization header to access_
+
+_What you receive:_
+
+```json
+{
+  "phone": "7131234567",
+  "user_id": 1,
+  "username": "iamauser"
+}
+```
+### [PUT] /api/users/update
+
+**_RESTRICTED ENDPOINT_**
+
+- Update authenticated user's phone number or password
+  - _requires valid token in authorization header to access_
+
+_What you send:_
+
+```json
+{
+  "phone": 2811234567,
+  "password": "newrandompassword"
+}
+```
+_What you receive:_
+
+```json
+{
+  "message": "Your submission has been updated"
+}
+```
+
 # Build Week Scaffolding for Node and PostgreSQL
 
 ## Video Tutorial

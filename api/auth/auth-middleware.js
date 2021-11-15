@@ -67,6 +67,7 @@ const validatePhone = (req, res, next) => {
 module.exports = {
     validateEmpty,
     validateLogin,
-    validateRegister,
     validatePhone,
+    validateRegister,
+    isNotEmptyString,
 };
