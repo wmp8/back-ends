@@ -5,7 +5,7 @@ const { validateEmpty, validateLogin, validateRegister, validatePhone } = requir
 const Users = require('../users/users.model');
 const tokenBuilder = require("./token-builder.js");
 
-router.post('/register', validateEmpty, validateRegister, validatePhone, (req, res, next) => {
+router.post('/signup', validateEmpty, validateRegister, validatePhone, (req, res, next) => {
     const { username, password, phone } = req.body;
     const rounds = process.env.BCRYPT_ROUNDS || 8;
     const hash = bcrypt.hashSync(password, rounds);

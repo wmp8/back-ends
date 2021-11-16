@@ -23,7 +23,7 @@
 ]
 ```
 
-### [POST] /api/auth/register
+### [POST] /api/auth/signup
 
 - Register a new user
   - _username required (must be a string | unique)_

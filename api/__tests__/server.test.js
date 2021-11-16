@@ -17,9 +17,9 @@ afterAll(async () => {
   await db.destroy()
 });
 
-describe('[POST] /api/auth/register', () => {
+describe('[POST] /api/auth/signup', () => {
   test('[1] Register responds if missing username or password', async () => {
-    const res = await request(server).post('/api/auth/register')
+    const res = await request(server).post('/api/auth/signup')
     expect(res.status).toBe(401)
     expect(res.body.message).toBe('username and password required')
   });
