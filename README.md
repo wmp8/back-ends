@@ -215,7 +215,7 @@ _What you receive:_
 
 **_RESTRICTED ENDPOINT_**
 
-- Update authenticated user's phone number or password
+- Add a new plant
   - _requires valid token in authorization header to access_
   - _nickname required (must be a string)_
   - _water_frequency required (must be a string)_

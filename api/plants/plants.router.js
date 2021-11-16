@@ -1,7 +1,5 @@
-// const jwtDecode = require('jwt-decode')
 const router = require('express').Router();
 const Plants = require('./plants.model.js');
-// const Users = require('../users/users.model');
 const { validateEmpty } = require('../middleware')
 const { validateCreate } = require('./plant-middleware')
 
@@ -22,8 +20,6 @@ router.get('/:plant_id', async (req, res, next) => {
 })
 
 router.post('/create', validateEmpty, validateCreate, async(req, res, next) => {
-    // const { username } = jwtDecode(req.headers.authorization);
-    // const [udb]  = await Users.findBy({ username });
     if (req.udb) {
         Plants.addPlant(req.udb.user_id, req.body)
         .then(plant => {res.status(201).json(plant)})
