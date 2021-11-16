@@ -4,6 +4,12 @@ function getAllPlants() {
     return db('plants as p')
 }
 
+function getUserPlants(user_id) {
+    return db('plants as p')
+        .select('*')
+        .where({user_id});
+}
+
 function getPlantById(plant_id) {
     return db('plants as p')
         .select('*')
@@ -59,4 +65,5 @@ module.exports = {
     deletePlant,
     getAllPlants,
     getPlantById,
+    getUserPlants,
 };

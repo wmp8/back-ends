@@ -3,7 +3,20 @@ const Plants = require('./plants.model.js');
 const { getDb, validateEmpty } = require('../middleware')
 const { validateCreate } = require('./plant-middleware')
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
+    const [db] = await getDb(req);
+    try {
+        const plants = await Plants.getUserPlants(db.user_id)
+        if (!plants) {
+            res.json({ message: `Username ${db.username} has no plant` })
+        }
+        res.json(plants)
+    } catch {
+        next()
+    }
+})
+
+router.get('/all', async (req, res) => {
     res.json(await Plants.getAllPlants())
 })
 

@@ -10,4 +10,4 @@ module.exports = function buildToken(user) {
         expiresIn: '1d',
     }
     return jwt.sign(payload, JWT_SECRET, options);
-}
+};

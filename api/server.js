@@ -16,6 +16,13 @@ server.use(cors())
  server.use('/api/users', restricted,  userRouter);
  server.use('/api/auth', authRouter);
 
+server.get('*', (req, res) => {
+  res.send(`
+    <h2>You shouldn't be here</h>
+    <p>Perhaps your destination is <a href="https://the-watering-can.netlify.app/">here</a>?</p>
+  `);
+});
+
 server.use((err, req, res, next) => { // eslint-disable-line
   res.status(err.status || 500).json({
     message: err.message,
