@@ -35,22 +35,36 @@ router.put('/update/:plant_id', validateEmpty, async (req, res, next) => {
     const changes = req.body;
     try {
         const updated = await Plants.updatePlant(plant_id, db.user_id, changes)
-        // .then((changed) => {
         if (updated) {
             res.json(updated);
-            console.log(plant_id, '------updated-------', db.user_id)
         } else {
             next({
                 message: "endpoint not updated",
             })
         }
     } catch {
-        // })
-        // .catch((err) =>
         next()
-        // );
     }
-    // );
+})
+
+router.delete('/delete/:plant_id', async (req, res, next) => {
+    const { plant_id } = req.params;
+    const [db] = await getDb(req);
+    
+    try {
+        const deleted = await Plants.deletePlant(plant_id, db.user_id)
+        if (deleted) {
+            res.json({
+                message: `Plant id ${plant_id} has been deleted`,
+            });
+        } else {
+            next({
+                message: "endpoint not deleted",
+            })
+        }
+    } catch {
+        next()
+    }
 })
 
 module.exports = router;

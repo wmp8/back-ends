@@ -46,10 +46,17 @@ const updatePlant = async (plant_id, user_id, changes) => {
     return updatedPlant
 }
 
+const deletePlant = async (plant_id, user_id) => {
+    return await db('plants')
+        .where({ plant_id, user_id })
+        .del();
+}
+
 module.exports = {
     addPlant,
     getPlantBy,
     updatePlant,
+    deletePlant,
     getAllPlants,
     getPlantById,
 };

@@ -278,6 +278,22 @@ _What you receive:_
         "water_frequency": "Water every 1-2 weeks"
     }
 ```
+### [DELETE] /api/plants/delete/:class_id
+
+**_RESTRICTED ENDPOINT_**
+
+- Delete an existing plants
+  - _requires valid token in authorization header to send_
+  - _required information:_
+    - _plant_id (integer)_
+
+_What you receive:_
+
+```json
+{
+    "message": "Plant id 1 has been deleted"
+}
+```
 # Build Week Scaffolding for Node and PostgreSQL
 
 ## Video Tutorial
