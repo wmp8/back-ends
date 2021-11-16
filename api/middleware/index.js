@@ -1,5 +1,13 @@
+const Users = require('../users/users.model');
+const jwtDecode = require('jwt-decode')
+
 function isNotEmptyString(str) {
     return typeof str === 'string' && str.trim().length > 0
+}
+
+async function getDb(req) {
+    const { username } = jwtDecode(req.headers.authorization);
+    return await Users.findBy({ username });
 }
 
 const validateEmpty = (req, res, next) => {
@@ -15,6 +23,7 @@ const validateEmpty = (req, res, next) => {
 };
 
 module.exports = {
+    getDb,
     isNotEmptyString,
     validateEmpty,
 }

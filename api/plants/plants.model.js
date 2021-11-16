@@ -31,9 +31,25 @@ async function addPlant(user_id, plant) {
     return createdPlant
 }
 
+const updatePlant = async (plant_id, user_id, changes) => {
+    const [updatedPlant] = await db('plants')
+        .where({ plant_id, user_id })
+        .update(changes, [
+            "plant_id",
+            "image_url",
+            "light_requirement",
+            "nickname",
+            "species",
+            "user_id",
+            "water_frequency",
+        ])
+    return updatedPlant
+}
+
 module.exports = {
     addPlant,
     getPlantBy,
+    updatePlant,
     getAllPlants,
     getPlantById,
 };

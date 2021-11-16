@@ -227,7 +227,7 @@ _What you send:_
         "image_url": "marble-pothos.png",
         "light_requirement": "Thrives in medium to low indirect light. Not suited for intense, direct sun.",
         "nickname": "Marble Queen Pothos",
-        "species": "",
+        "species": "Epipremnum aureum",
         "water_frequency": "Water every 1-2 weeks"
 }
 ```
@@ -240,14 +240,44 @@ _What you receive:_
         "light_requirement": "Thrives in medium to low indirect light. Not suited for intense, direct sun.",
         "nickname": "Marble Queen Pothos",
         "plant_id": 1,
-        "species": "",
+        "species": "Epipremnum aureum",
         "user_id": 1,
         "water_frequency": "Water every 1-2 weeks"
     }
 ```
+### [PUT] /api/plants/update/:plant_id
 
+**_RESTRICTED ENDPOINT_**
+- Update an existing plant
+  - _requires valid token in authorization header to access_
+  - _nickname required (must be a string)_
+  - _water_frequency required (must be a string)_
+  
+_What you send:_
 
+```json
+{
+        "image_url": "marble-pothos.png",
+        "light_requirement": "Thrives in medium to low indirect light. Not suited for intense, direct sun.",
+        "nickname": "Marble Queen Pothos",
+        "species": "Epipremnum aureum",
+        "water_frequency": "Water every 1-2 weeks"
+}
+```
+_What you receive:_
 
+```json
+
+  {
+        "image_url": "updated-marble-pothos.png",
+        "light_requirement": "Thrives in medium to low indirect light. Not suited for intense, direct sun.",
+        "nickname": "Marble Queen Pothos",
+        "plant_id": 1,
+        "species": "Epipremnum aureum",
+        "user_id": 1,
+        "water_frequency": "Water every 1-2 weeks"
+    }
+```
 # Build Week Scaffolding for Node and PostgreSQL
 
 ## Video Tutorial

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Plants = require('./plants.model.js');
-const { validateEmpty } = require('../middleware')
+const { getDb, validateEmpty } = require('../middleware')
 const { validateCreate } = require('./plant-middleware')
 
 router.get('/', async (req, res) => {
@@ -19,15 +19,38 @@ router.get('/:plant_id', async (req, res, next) => {
     }
 })
 
-router.post('/create', validateEmpty, validateCreate, async(req, res, next) => {
+router.post('/create', validateEmpty, validateCreate, async (req, res, next) => {
     if (req.udb) {
         Plants.addPlant(req.udb.user_id, req.body)
-        .then(plant => {res.status(201).json(plant)})
-        .catch(next)
+            .then(plant => { res.status(201).json(plant) })
+            .catch(next)
     } else {
         next()
-}
-
+    }
 });
+
+router.put('/update/:plant_id', validateEmpty, async (req, res, next) => {
+    const { plant_id } = req.params;
+    const [db] = await getDb(req);
+    const changes = req.body;
+    try {
+        const updated = await Plants.updatePlant(plant_id, db.user_id, changes)
+        // .then((changed) => {
+        if (updated) {
+            res.json(updated);
+            console.log(plant_id, '------updated-------', db.user_id)
+        } else {
+            next({
+                message: "endpoint not updated",
+            })
+        }
+    } catch {
+        // })
+        // .catch((err) =>
+        next()
+        // );
+    }
+    // );
+})
 
 module.exports = router;

@@ -1,9 +1,8 @@
-const jwtDecode = require('jwt-decode')
 const router = require('express').Router();
 const Users = require('./users.model');
 const bcrypt = require('bcryptjs');
 const { isNotEmptyString, validatePhone } = require('../auth/auth-middleware');
-
+const { getDb } = require('../middleware');
 
 router.get('/', async (req, res) => {
   res.json(await Users.getAllUsers())
@@ -19,9 +18,8 @@ router.get('/:user_id', async (req, res) => {
 })
 
 router.put('/update', validatePhone, async (req, res, next) => {
-  const { username } = jwtDecode(req.headers.authorization);
   const { password, phone } = req.body;
-  const [db] = await Users.findBy({ username });
+  const [db] = await getDb(req);
   let newPassword = db.password;
   let newPhone = db.phone;
 
@@ -37,7 +35,7 @@ router.put('/update', validatePhone, async (req, res, next) => {
 
     try {
       await Users.update(
-        username, { password: newPassword, phone: newPhone }
+        db.username, { password: newPassword, phone: newPhone }
       )
       res.status(200).json({
         message: 'Your submission has been updated'
@@ -46,7 +44,7 @@ router.put('/update', validatePhone, async (req, res, next) => {
       res.json({ message: `Entry is not being updated` })
     }
   } else {
-    res.json({ message: `not updated` })
+    next()
   }
 });
 
