@@ -2,7 +2,7 @@ const plants = [
     {
         nickname: 'Marble Queen Pothos',
         species: 'Epipremnum aureum',
-        image_url: 'marble-pothos.png',
+        image_url: './images/marble-pothos.png',
         water_frequency: 'Water every 1-2 weeks',
         light_requirement: 'Thrives in medium to low indirect light. Not suited for intense, direct sun.',
         user_id: 1,
@@ -11,7 +11,7 @@ const plants = [
     {
         nickname: 'Snake Plant Laurentii',
         species: 'Dracaena trifasciata',
-        image_url: 'snake-plant2.png',
+        image_url: './images/snake-plant2.png',
         water_frequency: 'Water every 2-3 weeks',
         light_requirement: 'Thrives in medium to bright indirect light, but can tolerate low indirect light.',
         user_id: 1,
@@ -19,7 +19,7 @@ const plants = [
     {
         nickname: 'ZZ Plant',
         species: 'Zamioculcas',
-        image_url: 'zz.png',
+        image_url: './images/zz.png',
         water_frequency: 'Water every 3-4 weeks',
         light_requirement:
         'Thrives in medium to low indirect light. Can tolerate bright indirect light. Not suited for intense, direct sun.',
@@ -28,7 +28,7 @@ const plants = [
     {
         nickname: 'Echeveria',
         species: 'succulents',
-        image_url: 'ech.png',
+        image_url: './images/ech.png',
         water_frequency: 'Water every 3-4 weeks',
         light_requirement: 'Thrives in bright direct light, but can tolerate bright indirect light.',
         user_id: 3,
