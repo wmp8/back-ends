@@ -36,7 +36,7 @@ _What you send:_
 {
   "username": "iamauser",
   "password": "randompassword",
-  "phone": 7131234567
+  "phone": "7131234567"
 }
 ```
 
