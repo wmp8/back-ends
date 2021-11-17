@@ -28,7 +28,7 @@
 - Register a new user
   - _username required (must be a string | unique)_
   - _password required (must be a string)_
-  - _phone required (must be a number)_
+  - _phone required (must be a string)_
 
 _What you send:_
 

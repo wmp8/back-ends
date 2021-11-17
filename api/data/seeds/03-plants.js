@@ -7,7 +7,6 @@ const plants = [
         light_requirement: 'Thrives in medium to low indirect light. Not suited for intense, direct sun.',
         user_id: 1,
     },
-
     {
         nickname: 'Snake Plant Laurentii',
         species: 'Dracaena trifasciata',
