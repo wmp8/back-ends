@@ -1,3 +1,4 @@
+const { lowerCase } = require('lower-case')
 const db = require('../data/db-config.js');
 
 function getAllUsers() {
@@ -19,7 +20,7 @@ function findById(user_id) {
 }
 async function add({ username, password, phone }) {
     const [newUserObject] = await db('users')
-        .insert({ username, password, phone }, ['user_id', 'username', 'phone'])
+        .insert({ username: lowerCase(username), password, phone }, ['user_id', 'username', 'phone'])
     return newUserObject // { user_id: 7, username: 'foo', phone: 'xxxxxxx' }
 }
 const update = async (username, changes) => {

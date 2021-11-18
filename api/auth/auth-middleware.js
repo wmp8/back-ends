@@ -1,5 +1,6 @@
 const User = require('../users/users.model');
 const { phone } = require('phone');
+const { lowerCase } = require('lower-case')
 
 function isNotEmptyString(str) {
     return typeof str === 'string' && str.trim().length > 0
@@ -19,6 +20,7 @@ const validateEmpty = (req, res, next) => {
 
 const validateLogin = async (req, res, next) => {
     const { username } = req.body;
+    lowerCase(username)
     const [user] = await User.findBy({ username });
     try {
         if (!user) {
@@ -37,7 +39,7 @@ const validateLogin = async (req, res, next) => {
 
 const validateRegister = async (req, res, next) => {
     const { username } = req.body;
-    const [user] = await User.findBy({ username });
+    const [user] = await User.findBy({ username: lowerCase(username) });
     try {
         if (!user) {
             req.user = user;
