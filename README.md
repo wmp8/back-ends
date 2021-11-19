@@ -149,7 +149,7 @@ _What you receive:_
 
 **_RESTRICTED ENDPOINT_**
 
-- Get an array of plants for the logged in authenticated user
+- Get an array of plants belong to the logged in / authenticated user
   - _requires valid token in authorization header to access_
 
 _What you receive:_
@@ -190,7 +190,7 @@ _What you receive:_
 
 **_RESTRICTED ENDPOINT_**
 
-- Get an array of all plants for authenticated user
+- Get an array of all plants
   - _requires valid token in authorization header to access_
 
 _What you receive:_

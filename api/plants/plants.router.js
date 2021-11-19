@@ -52,7 +52,7 @@ router.put('/update/:plant_id', validateEmpty, async (req, res, next) => {
             res.json(updated);
         } else {
             next({
-                message: "Not updated if it not your plant",
+                message: "Not updated, if it not your plant",
             })
         }
     } catch {
@@ -72,7 +72,7 @@ router.delete('/delete/:plant_id', async (req, res, next) => {
             });
         } else {
             next({
-                message: "Not deleted if it not yours to delete",
+                message: "Not deleted, if it not yours to delete",
             })
         }
     } catch {
