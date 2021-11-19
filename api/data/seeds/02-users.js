@@ -5,9 +5,14 @@ const users = [
         phone: '7131234567'
     },
     {
-        username: 'iamausertoo',
+        username: 'adam',
         password: '$2a$08$5QmmHYtNTAuroUfZB0s04OgefCClNqyuI7SRO1RFehVK7o1BOY.U2',
         phone: '8321234567'
+    },
+    {
+        username: 'bobtest',
+        password: '$2a$08$FGVilofEf4JFYD5Dch7LzulZsw.R1FgSqEvwqhmb5Lmx7YgUVPVGu',
+        phone: '7131234567'
     },
     {
         username: 'cheyenne',

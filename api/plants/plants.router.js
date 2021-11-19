@@ -7,7 +7,7 @@ router.get('/', async (req, res, next) => {
     const [db] = await getDb(req);
     try {
         const plants = await Plants.getUserPlants(db.user_id)
-        if (!plants) {
+        if (!plants || plants.length === 0) {
             res.json({ message: `Username ${db.username} has no plant` })
         }
         res.json(plants)

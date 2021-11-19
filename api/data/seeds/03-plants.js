@@ -32,12 +32,10 @@ const plants = [
         light_requirement: 'Thrives in bright direct light, but can tolerate bright indirect light.',
         user_id: 3,
     },
-]
-/*
     {
         nickname: 'Monstera Deliciosa',
         species: '',
-        image_url: 'monstera.png',
+        image_url: './images/monstera.png',
         water_frequency: 'Water every 1-2 weeks',
         light_requirement:
         'Thrives in bright to medium indirect light. Not usually suited for direct sun but can be acclimated to withstand it.',
@@ -46,7 +44,7 @@ const plants = [
     {
         nickname: 'Bird’s Nest Fern',
         species: '',
-        image_url: 'birds-fern.png',
+        image_url: './images/birds-fern.png',
         water_frequency: 'Water weekly',
         light_requirement: 'Thrives in medium to bright indirect light, but can tolerate low indirect light.',
         user_id: 2,
@@ -54,7 +52,7 @@ const plants = [
     {
         nickname: 'Philodendron Green',
         species: '',
-        image_url: 'philodendron.png',
+        image_url: './images/philodendron.png',
         water_frequency: 'Water every 1-2 weeks',
         light_requirement: 'Thrives in medium indirect light, but can tolerate low indirect light.',
         user_id: 3,
@@ -62,11 +60,13 @@ const plants = [
     {
         nickname: 'Calathea Rattlesnake',
         species: '',
-        image_url: 'rattlesnake.png',
+        image_url: './images/rattlesnake.png',
         water_frequency: 'Water every 1-2 weeks',
         light_requirement: 'Thrives in medium to bright indirect light, but can tolerate low indirect light.',
         user_id: 1,
     },
+]
+/*
     {
         nickname: 'Hoya Kerrii Plant',
         species: '',
