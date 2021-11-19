@@ -299,7 +299,7 @@ _What you receive:_
 - Update an existing plant
   - _requires valid token in authorization header to access_
   - _nickname required (must be a string)_
-  - _water_frequency required (must be a string)_
+  - _water\_frequency required (must be a string)_
 
 _What you send:_
 

@@ -23,6 +23,19 @@ describe('[POST] /api/auth/signup', () => {
     expect(res.status).toBe(401)
     expect(res.body.message).toBe('username and password required')
   });
+  test('[2] Register responds invalid phone number', async () => {
+    const res = await request(server).post('/api/auth/signup')
+      .send({ username: 'foo', password: 'bar', phone: '1111111111' })
+    expect(res.status).toBe(401)
+    expect(res.body.message).toBe('invalid phone number')
+  });
+  test('[3] Register responds when user already exists', async () => {
+    const res = await request(server).post('/api/auth/signup')
+      .send({ username: 'iamauser', password: 'bar', phone: '1111111111' })
+    expect(res.status).toBe(401)
+    expect(res.body.message).toBe('username taken')
+  });
+
 });
 
 describe('[POST] /api/auth/login', () => {

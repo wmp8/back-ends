@@ -1,3 +1,4 @@
+// const path = require('path')
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
@@ -7,6 +8,7 @@ const plantRouter = require('./plants/plants.router.js');
 const restricted = require('./middleware/restricted')
 
 const server = express()
+
 server.use(express.json())
 server.use(helmet())
 server.use(cors())
@@ -14,7 +16,7 @@ server.use(cors())
 
  server.use('/api/plants', restricted,  plantRouter);
  server.use('/api/users', restricted,  userRouter);
- server.use('/api/auth', authRouter);
+server.use('/api/auth', authRouter);
 
 server.get('*', (req, res) => {
   res.send(`
